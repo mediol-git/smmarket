@@ -11,38 +11,38 @@
 </head>
 <body>
 	<div class="hero-bg"></div>
-	<div class="wrapper">
+	<div class="wrapper" id="top">
 		<header class="header">
 			<a href="index.html" class="logo">SMMarket</a>
 			<input type="checkbox" name="" id="mobile-nav">
-			<label for="mobile-nav">
+			<label for="mobile-nav" class="menu-toggle">
 				<span></span>
 			</label>
 			<nav class="menu">
 				<ul class="menu-list">
 					<li class="menu-item">
-						<a href="#" class="menu-link">О компании</a>
+						<a href="#about" class="menu-link">О компании</a>
 					</li>
 					<li class="menu-item">
-						<a href="#" class="menu-link">Тарифы</a>
+						<a href="#offers" class="menu-link">Тарифы</a>
 					</li>
 					<li class="menu-item">
-						<a href="#" class="menu-link">Отзывы</a>
+						<a href="#testimonials" class="menu-link">Отзывы</a>
 					</li>
 					<li class="menu-item">
-						<a href="#" class="menu-link">Q&A</a>
+						<a href="#faq" class="menu-link">Q&A</a>
 					</li>
 					<li class="menu-item">
-						<a href="#" class="menu-link">Обратная связь</a>
+						<a href="#callback" class="menu-link">Обратная связь</a>
 					</li>
 				</ul>
+				<div class="lang">
+					<input type="checkbox" name="" id="ua">
+					<label for="ua" class="active">Ua</label> / 
+					<input type="checkbox" name="" id="ru">
+					<label for="ua">Ru</label>
+				</div>
 			</nav>
-			<div class="lang">
-				<input type="checkbox" name="" id="ua">
-				<label for="ua">Ua</label>/
-				<input type="checkbox" name="" id="ru">
-				<label for="ua">Ru</label>
-			</div>
 		</header>
 		<main class="main">
 			<section class="hero">
@@ -55,7 +55,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="benefits white-bg">
+			<section class="benefits white-bg" id="about">
 				<h2>Наши преимущества</h2>
 				<ul class="ben-list">
 					<li>
@@ -109,7 +109,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="offers white-bg">
+			<section class="offers white-bg" id="offers">
 				<h2>Наши тарифы</h2>
 				<ul class="offer-list">
 					<li class="offer">
@@ -166,12 +166,64 @@
 					</li>
 				</ul>
 			</section>
-			<section class="testimonials">
+			<section class="testimonials" id="testimonials">
 				<h2>Отзывы</h2>
+				<ul class="testimonials-list">
+					<li class="item">
+						<div class="item-head">
+							<img src="img/avatar.jpg" alt="отзывы фото">
+							<h2 class="name">Кот Василий</h2>
+							<p class="date">28.11.2021</p>
+						</div>
+						<div class="item-body">
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis beatae molestias dolores! Sunt commodi veritatis perspiciatis labore vero odit sed aspernatur numquam libero suscipit, aliquid nihil laudantium eveniet aut ea.</p>
+						</div>
+					</li>
+					<li class="item">
+						<div class="item-head">
+							<img src="img/avatar.jpg" alt="отзывы фото">
+							<h2 class="name">Кот Василий</h2>
+							<p class="date">28.11.2021</p>
+						</div>
+						<div class="item-body">
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis beatae molestias dolores! Sunt commodi veritatis perspiciatis labore vero odit sed aspernatur numquam libero suscipit, aliquid nihil laudantium eveniet aut ea.</p>
+						</div>
+					</li>
+					<li class="item">
+						<div class="item-head">
+							<img src="img/avatar.jpg" alt="отзывы фото">
+							<h2 class="name">Кот Василий</h2>
+							<p class="date">28.11.2021</p>
+						</div>
+						<div class="item-body">
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis beatae molestias dolores! Sunt commodi veritatis perspiciatis labore vero odit sed aspernatur numquam libero suscipit, aliquid nihil laudantium eveniet aut ea.</p>
+						</div>
+					</li>
+					<li class="item">
+						<div class="item-head">
+							<img src="img/avatar.jpg" alt="отзывы фото">
+							<h2 class="name">Кот Василий</h2>
+							<p class="date">28.11.2021</p>
+						</div>
+						<div class="item-body">
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis beatae molestias dolores! Sunt commodi veritatis perspiciatis labore vero odit sed aspernatur numquam libero suscipit, aliquid nihil laudantium eveniet aut ea.</p>
+						</div>
+					</li>
+					<li class="item">
+						<div class="item-head">
+							<img src="img/avatar.jpg" alt="отзывы фото">
+							<h2 class="name">Кот Василий</h2>
+							<p class="date">28.11.2021</p>
+						</div>
+						<div class="item-body">
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis beatae molestias dolores! Sunt commodi veritatis perspiciatis labore vero odit sed aspernatur numquam libero suscipit, aliquid nihil laudantium eveniet aut ea.</p>
+						</div>
+					</li>
+				</ul>
 			</section>
-			<section class="faq">
+			<section class="faq white-bg" id="faq">
 				<h2>Часто задаваемые вопросы</h2>
-				<div class="quesyions">
+				<div class="faq-list">
 					<details>
 						<summary>Some question?</summary>
 						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate veniam reprehenderit aliquid totam voluptatem recusandae enim, quae maxime sint debitis. Hic voluptate, quidem qui consequatur consectetur maiores amet. Molestias iure nihil inventore ut unde, vitae dolores numquam nisi totam provident, optio corrupti ad nostrum labore voluptatem debitis, architecto nulla fugit!
@@ -202,16 +254,16 @@
 					</details>
 				</div>
 			</section>
-			<section class="callback">
+			<section class="callback" id="callback">
 				<h2>Обратная связь</h2>
 				<p>Поговорите с одним из наших сотрудников, чтобы узнать, сколько мы можем получить для вас целевой аудитории за месяц с минимальными усилиями с вашей стороны</p>
 				<form action="send.php" method="post">
-					<input type="email" name="email" id="">
-					<input type="tel" name="tel" id="">
-					<input type="text" name="link">
-					<textarea name="question" id="" cols="30" rows="1"></textarea>
-					<input type="submit" value="Отправить заявку">
-					<p class="label">Нажимая на кнопку вы соглашаетесь на обработку персональных данных</p>
+					<input type="email" name="email" id="" placeholder="Введите свой e-mail">
+					<input type="tel" name="tel" id="" placeholder="Номер мобильного телефона">
+					<input type="text" name="nickname" placeholder="Никнейм в Instagram">
+					<textarea name="question" id="" cols="30" rows="2" placeholder="Что вы бы хотели спросить о росте в Instagram"></textarea>
+					<input type="submit" class="btn-submit" value="Отправить заявку">
+					<p class="label">Нажимая на кнопку вы соглашаетесь на обработку <a href="policy.html">персональных данных</a></p>
 				</form>
 			</section>
 		</main>
@@ -220,7 +272,7 @@
 				<a href="index.html" class="logo">SMMarket</a>
 				<p>&copy; 2021 Copyright reserved<br>SMMarket</p>
 			</div>
-			<a href="#top" class="up">Наверх &uarr;</a>
+			<a href="#top" class="up">Наверх <span>&uarr;</spa></a>
 		</footer>
 	</div>
 	

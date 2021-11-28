@@ -43,6 +43,14 @@ section {
   padding: 40px 20px;
 }
 
+section h2 {
+  margin-bottom: 8px;
+}
+
+section ul {
+  margin-top: 32px;
+}
+
 .white-bg {
   background: #fff;
 }
@@ -60,6 +68,11 @@ h2,
 h3 {
   color: #1A1A1A;
   font-weight: 500;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 .btn {
@@ -88,7 +101,9 @@ h3 {
 }
 
 .header {
+  position: relative;
   padding: 16px 20px;
+  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -98,17 +113,47 @@ h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  z-index: 4;
 }
 
 .header .logo {
   color: #4754EB;
 }
 
-.header input {
+.header .menu {
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(320px);
+          backdrop-filter: blur(320px);
+  position: absolute;
+  padding: 40px 20px;
+  margin-top: 65px;
+  height: calc(100vh - 65px);
+  width: 100%;
+  right: -105%;
+  top: 0;
+  -webkit-transition: right .3s;
+  transition: right .3s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header input[type=checkbox] {
   display: none;
 }
 
-.header label {
+.header input[type=checkbox]:checked ~ .menu {
+  right: 0;
+}
+
+.header .menu-toggle {
   position: relative;
   display: block;
   width: 32px;
@@ -121,7 +166,7 @@ h3 {
   border-radius: 20px;
 }
 
-.header label span {
+.header .menu-toggle span {
   display: inline-block;
   height: 2px;
   width: 12px;
@@ -130,9 +175,11 @@ h3 {
   position: relative;
   left: 9px;
   top: 5px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-.header label span::before {
+.header .menu-toggle span::before {
   content: '';
   display: inline-block;
   height: 2px;
@@ -142,9 +189,11 @@ h3 {
   position: absolute;
   top: -6px;
   left: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-.header label span::after {
+.header .menu-toggle span::after {
   content: '';
   display: inline-block;
   height: 2px;
@@ -154,11 +203,51 @@ h3 {
   position: absolute;
   top: 6px;
   left: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 
-.menu,
+input[type=checkbox]:checked + label span {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 16px;
+}
+
+input[type=checkbox]:checked + label span::before {
+  top: 0;
+  width: 16px;
+}
+
+input[type=checkbox]:checked + label span::after {
+  top: 0;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  width: 16px;
+}
+
+.menu-list {
+  list-style: none;
+}
+
+.menu-list .menu-link {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 45px;
+  margin: 16px 0px;
+  color: #1a1a1a;
+}
+
+.menu-list .menu-link:hover {
+  color: #4754EB;
+}
+
 .lang {
-  display: none;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.lang .active {
+  color: #4754EB;
 }
 
 .hero-bg {
@@ -172,7 +261,7 @@ h3 {
 }
 
 .hero {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
   padding-top: 40px;
   padding-bottom: 60px;
   display: -webkit-box;
@@ -348,8 +437,9 @@ h3 {
 .how-desc label {
   display: inline-block;
   cursor: pointer;
-  padding: 10px;
+  padding: 10px 15px;
   color: #cecece;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -385,7 +475,7 @@ h3 {
 }
 
 .offer-list .offer {
-  background: #fafafa;
+  background: #f1f1f1;
   -webkit-box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
           box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
   -webkit-backdrop-filter: blur(24px);
@@ -397,7 +487,6 @@ h3 {
 
 .offer-list .offer .offer-head {
   padding: 16px;
-  background: rgba(255, 255, 255, 0.5);
   font-size: 18px;
   line-height: 23px;
 }
@@ -443,6 +532,214 @@ h3 {
   color: #EB4763;
 }
 
+.testimonials {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.testimonials::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(240px);
+          backdrop-filter: blur(240px);
+}
+
+.testimonials::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../img/testimonials.svg") center/cover no-repeat;
+  z-index: -2;
+}
+
+.testimonials-list .item {
+  background: #f1f1f1;
+  -webkit-box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
+          box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
+  -webkit-backdrop-filter: blur(24px);
+          backdrop-filter: blur(24px);
+  border-radius: 24px;
+  margin-bottom: 20px;
+  padding: 16px;
+}
+
+.testimonials-list .item .item-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 12px;
+}
+
+.testimonials-list .item img {
+  border-radius: 50%;
+}
+
+.testimonials-list .item .item-body {
+  padding-top: 16px;
+}
+
+.faq-list details {
+  margin-bottom: 16px;
+  background: #fff;
+  background: rgba(25, 25, 25, 0.025);
+  -webkit-box-shadow: -2px 4px 20px rgba(25, 25, 25, 0.025);
+          box-shadow: -2px 4px 20px rgba(25, 25, 25, 0.025);
+  border-radius: 16px;
+  padding: 0 16px;
+}
+
+.faq-list details[open] summary::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.faq-list summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: rgba(25, 25, 25, 0.05);
+  -webkit-backdrop-filter: blur(240px);
+          backdrop-filter: blur(240px);
+  border-radius: 16px;
+  padding: 32px 28px 26px;
+  margin: 0 -16px 16px;
+  font-size: 22px;
+  line-height: 28px;
+  color: #1a1a1a;
+}
+
+.faq-list summary::marker {
+  content: none;
+}
+
+.faq-list summary::after {
+  content: '+';
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  margin-top: -5px;
+  font-size: 32px;
+  line-height: 36px;
+  text-align: center;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+}
+
+.callback {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.callback::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(240px);
+          backdrop-filter: blur(240px);
+}
+
+.callback::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url("../img/callback-bg.svg") center/cover no-repeat;
+  z-index: -2;
+}
+
+.callback form {
+  margin-top: 16px;
+}
+
+.callback form input,
+.callback form textarea {
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 15px 16px 14px;
+}
+
+.callback form input::-webkit-input-placeholder,
+.callback form textarea::-webkit-input-placeholder {
+  font-size: inherit;
+  line-height: inherit;
+  color: #808080;
+}
+
+.callback form input:-ms-input-placeholder,
+.callback form textarea:-ms-input-placeholder {
+  font-size: inherit;
+  line-height: inherit;
+  color: #808080;
+}
+
+.callback form input::-ms-input-placeholder,
+.callback form textarea::-ms-input-placeholder {
+  font-size: inherit;
+  line-height: inherit;
+  color: #808080;
+}
+
+.callback form input::placeholder,
+.callback form textarea::placeholder {
+  font-size: inherit;
+  line-height: inherit;
+  color: #808080;
+}
+
+.callback form .btn-submit {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  padding: 15px 32px;
+  display: inline-block;
+  width: auto;
+  background: #4754EB;
+  color: #fff;
+}
+
 .footer {
   padding: 16px 21px 23px;
   background: #4754EB;
@@ -469,4 +766,9 @@ h3 {
 .footer .logo {
   display: block;
   margin-bottom: 8px;
+}
+
+.footer span {
+  font-size: 24px;
+  font-weight: 200;
 }
