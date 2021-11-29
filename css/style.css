@@ -40,13 +40,10 @@ body {
 .wrapper {
   position: relative;
   overflow: hidden;
-  -webkit-box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
-          box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
   background: rgba(255, 255, 255, 0.65);
   -webkit-backdrop-filter: blur(240px);
           backdrop-filter: blur(240px);
   border-radius: 24px;
-  z-index: 1;
 }
 
 section {
@@ -441,6 +438,11 @@ input[type=checkbox]:checked + label span::after {
   padding-bottom: 40px;
 }
 
+.benefits .ben-wrap {
+  -webkit-box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
+          box-shadow: 0px 4px 20px rgba(25, 25, 25, 0.05);
+}
+
 .benefits .ben-list {
   list-style: none;
   margin-top: 30px;
@@ -517,7 +519,7 @@ input[type=checkbox]:checked + label span::after {
   height: 100%;
   top: 0;
   left: 0;
-  background: url("../img/how-bg.svg") center/cover no-repeat;
+  background: url("../img/hiw-bg.svg") center/cover no-repeat;
   z-index: -2;
 }
 
